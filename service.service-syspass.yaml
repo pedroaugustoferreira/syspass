@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"service-syspass","namespace":"syspass"},"spec":{"ports":[{"name":"port-syspass","port":80,"protocol":"TCP","targetPort":80}],"selector":{"application":"syspass"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+  creationTimestamp: "2023-02-21T11:09:18Z"
+  name: service-syspass
+  namespace: syspass
+  resourceVersion: "632833"
+  uid: 5d5e525b-4ca4-48ea-b886-074a23cdb9d5
+spec:
+  clusterIP: 10.43.81.156
+  clusterIPs:
+  - 10.43.81.156
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: port-syspass
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    application: syspass
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

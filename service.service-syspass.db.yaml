@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-20T15:02:13Z"
+  name: service-syspass-db
+  namespace: syspass
+  resourceVersion: "334548"
+  uid: 2c27e4f3-f5c8-4c1b-b888-5b48e720a689
+spec:
+  clusterIP: 10.43.13.41
+  clusterIPs:
+  - 10.43.13.41
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: port-syspass-db
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    application: syspass-db
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
